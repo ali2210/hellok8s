@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: hellok8s-go
+specs: 
+  replicas: 3
+  selector:
+    matchLabels: hellok8s-go
+  template: 
+    metadata: 
+      labels:
+        app: hellok8s-go
+    specs: 
+      container:
+        name: hellok8s-go
+        image: ali2210/hellok8s-go
+        imagePullPolicy: IfNotPresent
